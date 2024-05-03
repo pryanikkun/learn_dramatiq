@@ -1,0 +1,21 @@
+version: '3.6'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - ./src/.env
+    volumes:
+      - ./rabbit/data/:/var/lib/rabbitmq/
+      - ./rabbit/log/:/var/log/rabbitmq
+    networks:
+      - main_bridge
+
+networks:
+  main_bridge:
+    driver: bridge
