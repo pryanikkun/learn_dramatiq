@@ -24,7 +24,7 @@ async def get_message(message_id: int,
                       session: AsyncSession = Depends(get_async_session)):
     query = select(Message).where(Message.id == message_id)
     result = await session.execute(query)
-    return result.all()
+    return result.first()
 
 
 @msg_router.post("")

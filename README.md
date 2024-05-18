@@ -28,7 +28,3 @@ docker-compose up
 ## Запуск
 Сначала запускаем `handlers.py`, потом `main.py`.
 
-## Вызов ошибки
-Нужно отправить post-запрос на `/messages`, указав id созданного тикета и любой текст.
-
-http://localhost:8000/docs
